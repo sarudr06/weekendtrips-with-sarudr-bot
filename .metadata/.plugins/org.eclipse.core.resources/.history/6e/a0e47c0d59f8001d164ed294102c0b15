@@ -1,0 +1,20 @@
+package com.sarudr.weekendtripservice.service;
+
+import java.util.List;
+
+public interface PackagesService {
+
+	Package savePackage(Package package1);
+
+	List<Package> getPack();
+
+	Package getPackById(long packId);
+
+	Package updatepack(long packId, Package packages);
+
+	Package savepackageById(long cityId, Package package1);
+
+	String changeStatus(long packId);
+
+	Package findbypackName(String packageName);
+}

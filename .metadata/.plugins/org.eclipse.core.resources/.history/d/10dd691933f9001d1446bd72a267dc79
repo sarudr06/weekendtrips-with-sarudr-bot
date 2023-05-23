@@ -1,0 +1,25 @@
+server:
+   port: 8086
+spring:
+  application:
+    name: openai-service
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost    
+    
+openai-service:
+  api-key: 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
+  gpt-model: gpt-3.5-turbo
+  audio-model: whisper-1
+  http-client:
+    read-timeout: 3000
+    connect-timeout: 3000
+  urls:
+    base-url: https://api.openai.com/v1
+    chat-url: /chat/completions
+    create-transcription-url: /audio/transcriptions

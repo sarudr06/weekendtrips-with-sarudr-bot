@@ -1,0 +1,43 @@
+package com.sarudr.travellerservice;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class AppConfig {
+
+//	public CorsFilter corsFilter() {
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        CorsConfiguration config = new CorsConfiguration();
+//
+//        // Set the allowed origins, methods, and headers
+//        config.addAllowedOrigin("http://localhost:4200");
+//        config.addAllowedMethod("*");
+//        config.addAllowedHeader("*");
+//
+//        // Allow credentials
+//        config.setAllowCredentials(true);
+//
+//        // Add mapping for all endpoints
+//        source.registerCorsConfiguration("/**", config);
+//
+//        return new CorsFilter(source);
+//    }
+	@Bean
+	WebMvcConfigurer mvcConfigurer() {
+		return new WebMvcConfigurer() {
+
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				System.out.println("cheking config");
+				registry.addMapping("/**") // Allow CORS for all endpoints
+						.allowedOrigins("*")// Configure the allowed origins (you can restrict to specific origins)
+					//	.allowedMethods("GET", "POST", "PUT", "DELETE") // Configure the allowed HTTP methods
+						.allowedHeaders("**") // Configure the allowed headers
+						.maxAge(3600); // Configure the max age of the CORS pre-flight response in seconds
+			}
+		};
+	}	
+}

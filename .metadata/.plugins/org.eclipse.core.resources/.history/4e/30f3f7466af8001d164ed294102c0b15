@@ -1,0 +1,13 @@
+package com.sarudr.weekendtripservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class WeekendtripServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(WeekendtripServiceApplication.class, args);
+	}
+
+}

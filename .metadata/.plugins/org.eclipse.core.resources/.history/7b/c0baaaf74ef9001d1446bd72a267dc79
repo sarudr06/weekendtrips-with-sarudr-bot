@@ -1,0 +1,5 @@
+package com.sarudr.travellerservice;
+
+public class AppConfig {
+
+}

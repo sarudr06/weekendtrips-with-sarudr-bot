@@ -1,0 +1,5 @@
+package com.sarudr.openaiservice.model;
+
+public class ChatGPTRequest {
+
+}
